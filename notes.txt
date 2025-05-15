@@ -1,0 +1,74 @@
+1. PROJECT PHASE-1 (Part a)
+
+    install from terminal
+        npm init -y
+        npm i express
+        npm i mongoose
+        npm i ejs
+        npm i method-override
+
+    Summary
+        1. Basic Dependencies Set-up
+        2. Database Creation and Connection
+        3. Created Schema, Model and Collection
+        4. Created Create(new.ejs), Read(index.ejs), Update(edit.ejs) and Delete(show.ejs) Route
+
+    File Structure
+    MajorProject/                   # Main project Folder
+        ├──init/
+        |    ├──data.js             # Sample data 
+        |    └──index.js            # Database Connection 
+        ├──models
+        |    └──listing.js          # Schema Model for Listing Collection
+        ├──node_modules
+        ├──views
+        |    ├──listings
+        |       ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
+        |       ├──index.ejs        # All Listing               "/listings"
+        |       ├──new.ejs          # Create New Listing        "/listings/new"
+        |       └──show.ejs         # Display Single Listing    "/listings/:id"
+        ├──app.js
+        ├──notes.txt                # Notes and Summary for Project bs1as5ta 
+        ├──package-lock.json
+        └──package.json
+
+2. PROJECT PHASE-1 (Part b)
+    
+    install from terminal
+        npm i ejs-mate
+
+    Summary
+        1. Created Boilerplate code
+        2. using Bootstrap for Navbar and Footer
+
+    File Structure
+    MajorProject/                   # Main project Folder
+        ├──init/
+        |    ├──data.js             # Sample data 
+        |    └──index.js            # Database Connection 
+        ├──models
+        |    └──listing.js          # Schema Model for Listing Collection
+        ├──node_modules
+        ├──views
+        |    ├──layouts
+        |       └──biolerplate.ejs
+        |    ├──listings
+        |       ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
+        |       ├──index.ejs        # All Listing               "/listings"
+        |       ├──new.ejs          # Create New Listing        "/listings/new"
+        |       └──show.ejs         # Display Single Listing    "/listings/:id"
+        ├──app.js
+        ├──notes.txt                # Notes and Summary for Project bs1as5ta 
+        ├──package-lock.json
+        └──package.json
+
+2. PROJECT PHASE-1 (Part c)
+
+    install
+        npm i joi
+
+    Summary
+        1. Creating Client site Validation with Bootstrap
+        2. Error-Handling
+        3. Server site Validation
+        4. Creating Schema Validation with joi
