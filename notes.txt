@@ -559,6 +559,9 @@ PART-D
         1. Using Mongo Atlas: Cloud Database Service
         2. Mongo Session Store (touchAfter: login after everytime server starts solve)
         3. Deployment with Render (adding node version in engines in package.json before Deployment)
-        4. Push Code to GitHub
-        5. Connect Render With GitHub
-        6. Create New Service
+        4. Push Code to GitHub & Connect Render With GitHub
+        5. Adding all Environment Variables in Render
+        6. Adding IP Address from Render to Atlas
+
+    Home Work
+        1. Authorization: remove the delete button from Reviews
