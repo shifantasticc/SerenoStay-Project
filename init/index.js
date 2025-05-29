@@ -22,7 +22,7 @@ const initDB = async () => {
   // To add data in every entry in db at once!
   initData.data = initData.data.map((obj) => ({
     ...obj,
-    owner: '68334fb99118995e9f4958a0',
+    owner: '683352296d28de194e0ef9f3',
   }));
   await Listing.insertMany(initData.data);
   console.log('data was initialized');

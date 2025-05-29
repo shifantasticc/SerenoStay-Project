@@ -1,4 +1,13 @@
-1. PROJECT PHASE-1 (Part a)
+    Summary
+        1. 
+        2. 
+        3. 
+        4.
+        5.
+        6. 
+
+1.1 PROJECT PHASE-1
+PART-A
 
     install from terminal
         npm init -y
@@ -12,6 +21,7 @@
         2. Database Creation and Connection
         3. Created Schema, Model and Collection
         4. Created Create(new.ejs), Read(index.ejs), Update(edit.ejs) and Delete(show.ejs) Route
+        5. Folders: init|models|views[listings} => app.js
 
     File Structure
     MajorProject/                   # Main project Folder
@@ -22,24 +32,27 @@
         |    └──listing.js          # Schema Model for Listing Collection
         ├──node_modules
         ├──views
-        |    ├──listings
+        |    └──listings
         |       ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
         |       ├──index.ejs        # All Listing               "/listings"
         |       ├──new.ejs          # Create New Listing        "/listings/new"
         |       └──show.ejs         # Display Single Listing    "/listings/:id"
-        ├──app.js
+        ├──app.js                   # Main JS File for Project
         ├──notes.txt                # Notes and Summary for Project bs1as5ta 
         ├──package-lock.json
         └──package.json
 
-2. PROJECT PHASE-1 (Part b)
-    
+1.2 PROJECT PHASE-1
+PART-B
+
     install from terminal
         npm i ejs-mate
 
     Summary
         1. Created Boilerplate code
-        2. using Bootstrap for Navbar and Footer
+        2. Using Bootstrap for Navbar and Footer
+        3. Styling every Routes
+        4. Folders: init|models|public[css}|views[includes|layouts|listings)| => app.js
 
     File Structure
     MajorProject/                   # Main project Folder
@@ -49,26 +62,503 @@
         ├──models
         |    └──listing.js          # Schema Model for Listing Collection
         ├──node_modules
+        ├──public  
+        |    └──css         
+        |       └──style.css        # CSS File for all Routes
         ├──views
+        |    ├──includes
+        |    |  ├──footer.ejs       # Footer for all Pages
+        |    |  └──navbar.ejs       # Navbar for all Pages
         |    ├──layouts
-        |       └──biolerplate.ejs
-        |    ├──listings
+        |    |  └──biolerplate.ejs  # Primary HTML File that Includes Files Accordingly
+        |    └──listings
         |       ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
         |       ├──index.ejs        # All Listing               "/listings"
         |       ├──new.ejs          # Create New Listing        "/listings/new"
         |       └──show.ejs         # Display Single Listing    "/listings/:id"
-        ├──app.js
+        ├──app.js                   # Main JS File for Project
         ├──notes.txt                # Notes and Summary for Project bs1as5ta 
         ├──package-lock.json
         └──package.json
 
-2. PROJECT PHASE-1 (Part c)
+1.3 PROJECT PHASE-1
+PART-C
 
     install
         npm i joi
 
     Summary
         1. Creating Client site Validation with Bootstrap
-        2. Error-Handling
-        3. Server site Validation
-        4. Creating Schema Validation with joi
+        2. Success & Failure Text
+        3. Custom Error-Handling
+        4. Adding wrapAsync, ExpressError & Error.ejs 
+        5. Server site Validation
+        6. Creating Schema Validation with joi
+        7. Folders: init|models|public[css|}|views[includes|layouts|listings)| => app.js
+
+    File Structure
+    MajorProject/                   # Main project Folder
+        ├──init/
+        |    ├──data.js             # Sample data 
+        |    └──index.js            # Database Connection 
+        ├──models
+        |    └──listing.js          # Schema Model for Listing Collection
+        ├──node_modules
+        ├──public  
+        |    ├──css         
+        |    |  └──style.css        # CSS File for all Routes
+        |    └──js         
+        |       └──script.js        # JS File from for Custom Form Validation(required field text)
+        ├──utils
+        |    ├──ExpressError.js     # Handles Express Errors
+        |    └──wrapAsync.js        # Function that Handles Error in app.js 
+        ├──views
+        |    ├──includes
+        |    |  ├──footer.ejs       # Footer for all Pages
+        |    |  └──navbar.ejs       # Navbar for all Pages
+        |    ├──layouts
+        |    |  └──biolerplate.ejs  # Primary HTML File that Includes Files Accordingly
+        |    ├──listings
+        |    |  ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
+        |    |  ├──index.ejs        # All Listing               "/listings"
+        |    |  ├──new.ejs          # Create New Listing        "/listings/new"
+        |    |  └──show.ejs         # Display Single Listing    "/listings/:id"
+        |    └──error.ejs           # Custom Error Msg
+        ├──app.js                   # Main JS File for Project
+        ├──notes.txt                # Notes and Summary for Project
+        ├──package-lock.json
+        ├──package.json
+        └──schema.js                # Schema Validation File
+
+2.1 PROJECT PHASE-2
+PART-A
+
+    Operator
+        $pull:
+            The $pull operator removes from an existing array all instances of a value or values that match a specified condition.
+
+    Summary
+        1. Handling Deletion using Mongoose (query)Middleware
+        2. Creating Reviews Section & Schema Model
+        3. Setting up the Reviews Form
+        4. Adding new Reviews in DB [one-to-Many Relationship]
+        5. Validations for Reviews (using hoppscotch) & Styling it
+        6. Creating Delete Review Route & Deleteing Reviews from DB
+        7. Delete Listing then Delete Reviews from DB(listing.js)
+
+    File Structure
+    MajorProject/                   # Main project Folder
+        ├──init/
+        |    ├──data.js             # Sample data 
+        |    └──index.js            # Database Connection 
+        ├──models
+        |    ├──listing.js          # Schema Model for Listing Collection
+        |    └──review.js           # Schema Model for Review Collection
+        ├──node_modules
+        ├──public  
+        |    ├──css         
+        |    |  └──style.css        # CSS File for all Routes
+        |    └──js         
+        |       └──script.js        # JS File from for Custom Form Validation(required field text)
+        ├──utils
+        |    ├──ExpressError.js     # Handles Express Errors
+        |    └──wrapAsync.js        # Function that Handles Error in app.js 
+        ├──views
+        |    ├──includes
+        |    |  ├──footer.ejs       # Footer for all Pages
+        |    |  └──navbar.ejs       # Navbar for all Pages
+        |    ├──layouts
+        |    |  └──biolerplate.ejs  # Primary HTML File that Includes Files Accordingly
+        |    ├──listings
+        |    |  ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
+        |    |  ├──index.ejs        # All Listing               "/listings"
+        |    |  ├──new.ejs          # Create New Listing        "/listings/new"
+        |    |  └──show.ejs         # Display Single Listing    "/listings/:id"
+        |    └──error.ejs           # Custom Error Msg
+        ├──app.js                   # Main JS File for Project
+        ├──notes.txt                # Notes and Summary for Project
+        ├──package-lock.json
+        ├──package.json
+        └──schema.js                # Schema Validation File
+
+2.2 PROJECT PHASE-2
+PART-B
+
+    install
+        npm i cookie-parser
+        
+    Summary
+        1. Express Router: creating seperate files for similar Routes
+        2. Using merge params in Reviews
+        3. Cookies (Session Management, Personalization, Tracking)
+        4. Signed Cookies & Verify Signed Cookies
+
+    File Structure
+    MajorProject/                   # Main project Folder
+        ├──init/
+        |    ├──data.js             # Sample data 
+        |    └──index.js            # Database Connection 
+        ├──models
+        |    ├──listing.js          # Schema Model for Listing Collection
+        |    └──review.js           # Schema Model for Review Collection
+        ├──node_modules
+        ├──public  
+        |    ├──css         
+        |    |  └──style.css        # CSS File for all Routes
+        |    └──js         
+        |       └──script.js        # JS File from for Custom Form Validation(required field text)
+        ├──routes
+        |    ├──listing.js          # All the Routes of Listing
+        |    └──review.js           # All the Routes of Review
+        ├──utils
+        |    ├──ExpressError.js     # Handles Express Errors
+        |    └──wrapAsync.js        # Function that Handles Error in app.js 
+        ├──views
+        |    ├──includes
+        |    |  ├──footer.ejs       # Footer for all Pages
+        |    |  └──navbar.ejs       # Navbar for all Pages
+        |    ├──layouts
+        |    |  └──biolerplate.ejs  # Primary HTML File that Includes Files Accordingly
+        |    ├──listings
+        |    |  ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
+        |    |  ├──index.ejs        # All Listing               "/listings"
+        |    |  ├──new.ejs          # Create New Listing        "/listings/new"
+        |    |  └──show.ejs         # Display Single Listing    "/listings/:id"
+        |    └──error.ejs           # Custom Error Msg
+        ├──app.js                   # Main JS File for Project
+        ├──notes.txt                # Notes and Summary for Project
+        ├──package-lock.json
+        ├──package.json
+        └──schema.js                # Schema Validation File
+
+2.3 PROJECT PHASE-2
+PART-C
+
+    install
+        npm i express-session
+        npm i connect-flash
+
+    Summary
+        1. What is State? statefull(ftp) and stateless protocol(http)
+        2. Express Sessions: An attempt to make our session stateful
+        3. Connect-flash (pop-up, JOptionpane, Alerts) & res.locals
+        4. Implementing Cookie Options
+        5. httpOnly: true => Do Learn Cross Scripting Attacks
+
+   File Structure
+    MajorProject/                   # Main project Folder
+        ├──init/
+        |    ├──data.js             # Sample data 
+        |    └──index.js            # Database Connection 
+        ├──models
+        |    ├──listing.js          # Schema Model for Listing Collection
+        |    └──review.js           # Schema Model for Review Collection
+        ├──node_modules
+        ├──public  
+        |    ├──css         
+        |    |  └──style.css        # CSS File for all Routes
+        |    └──js         
+        |       └──script.js        # JS File from for Custom Form Validation(required field text)
+        ├──routes
+        |    ├──listing.js          # All the Routes of Listing
+        |    └──review.js           # All the Routes of Review
+        ├──utils
+        |    ├──ExpressError.js     # Handles Express Errors
+        |    └──wrapAsync.js        # Function that Handles Error in app.js 
+        ├──views
+        |    ├──includes
+        |    |  ├──flash.ejs        # Flash messages for all Pages
+        |    |  ├──footer.ejs       # Footer for all Pages
+        |    |  └──navbar.ejs       # Navbar for all Pages
+        |    ├──layouts
+        |    |  └──biolerplate.ejs  # Primary HTML File that Includes Files Accordingly
+        |    ├──listings
+        |    |  ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
+        |    |  ├──index.ejs        # All Listing               "/listings"
+        |    |  ├──new.ejs          # Create New Listing        "/listings/new"
+        |    |  └──show.ejs         # Display Single Listing    "/listings/:id"
+        |    └──error.ejs           # Custom Error Msg
+        ├──app.js                   # Main JS File for Project
+        ├──notes.txt                # Notes and Summary for Project
+        ├──package-lock.json
+        ├──package.json
+        └──schema.js                # Schema Validation File
+
+2.4 PROJECT PHASE-2
+PART-D
+
+    install
+        npm i passport (Express-compatible authentication middleware for Nodejs)
+        npm i passport-local (Strategy for authenticating with a username and password)
+        npm i passport-local-mongoose (Mongoose plugin that simplifies building username and password)
+
+    Summary
+        1. Authentication & Authorization(passport: Sign-up authentication middleware)
+        2. Hashing(SHA256, MD5, CRC, bcrypt) & salting (using algo: pbkdf2)
+        3. Creating User Model & Configuring Strategy
+        4. Creating SignUp User GET & POST Route 
+
+    File Structure
+    MajorProject/                   # Main project Folder
+        ├──init/
+        |    ├──data.js             # Sample data 
+        |    └──index.js            # Database Connection 
+        ├──models
+        |    ├──listing.js          # Schema Model for Listing Collection
+        |    ├──review.js           # Schema Model for Review Collection
+        |    └──user.js             # Schema Model for User Collection
+        ├──node_modules
+        ├──public  
+        |    ├──css         
+        |    |  └──style.css        # CSS File for all Routes
+        |    └──js         
+        |       └──script.js        # JS File from for Custom Form Validation(required field text)
+        ├──routes
+        |    ├──listing.js          # All the Routes of Listing
+        |    ├──review.js           # All the Routes of Review
+        |    └──user.js             # All the Routes of SignUp/Login
+        ├──utils
+        |    ├──ExpressError.js     # Handles Express Errors
+        |    └──wrapAsync.js        # Function that Handles Error in app.js 
+        ├──views
+        |    ├──includes
+        |    |  ├──flash.ejs        # Flash messages for all Pages
+        |    |  ├──footer.ejs       # Footer for all Pages
+        |    |  └──navbar.ejs       # Navbar for all Pages
+        |    ├──layouts
+        |    |  └──biolerplate.ejs  # Primary HTML File that Includes Files Accordingly
+        |    ├──listings
+        |    |  ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
+        |    |  ├──index.ejs        # All Listing               "/listings"
+        |    |  ├──new.ejs          # Create New Listing        "/listings/new"
+        |    |  └──show.ejs         # Display Single Listing    "/listings/:id"
+        |    ├──users
+        |    |  ├──login.ejs        # Login Page
+        |    |  └──signup.ejs       # SignUp Page
+        |    └──error.ejs           # Custom Error Msg
+        ├──app.js                   # Main JS File for Project
+        ├──notes.txt                # Notes and Summary for Project
+        ├──package-lock.json
+        ├──package.json
+        └──schema.js                # Schema Validation File
+
+2.5 PROJECT PHASE-2
+PART-E
+
+    Summary
+        1. Connecting Login Route & Creating Logout
+        2. adding Styling: adding signup, login & logout buttons 
+        3. Login after SignUp & Post-Login Page
+        4. Creating Listing Owner & Review Author.
+
+    File Structure
+    MajorProject/                   # Main project Folder
+        ├──init/
+        |    ├──data.js             # Sample data 
+        |    └──index.js            # Database Connection 
+        ├──models
+        |    ├──listing.js          # Schema Model for Listing Collection
+        |    ├──review.js           # Schema Model for Review Collection
+        |    └──user.js             # Schema Model for User Collection
+        ├──node_modules
+        ├──public  
+        |    ├──css         
+        |    |  └──style.css        # CSS File for all Routes
+        |    └──js         
+        |       └──script.js        # JS File from for Custom Form Validation(required field text)
+        ├──routes
+        |    ├──listing.js          # All the Routes of Listing
+        |    ├──review.js           # All the Routes of Review
+        |    └──user.js             # All the Routes of SignUp/Login
+        ├──utils
+        |    ├──ExpressError.js     # Handles Express Errors
+        |    └──wrapAsync.js        # Function that Handles Error in app.js 
+        ├──views
+        |    ├──includes
+        |    |  ├──flash.ejs        # Flash messages for all Pages
+        |    |  ├──footer.ejs       # Footer for all Pages
+        |    |  └──navbar.ejs       # Navbar for all Pages
+        |    ├──layouts
+        |    |  └──biolerplate.ejs  # Primary HTML File that Includes Files Accordingly
+        |    ├──listings
+        |    |  ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
+        |    |  ├──index.ejs        # All Listing               "/listings"
+        |    |  ├──new.ejs          # Create New Listing        "/listings/new"
+        |    |  └──show.ejs         # Display Single Listing    "/listings/:id"
+        |    ├──users
+        |    |  ├──login.ejs        # Login Page
+        |    |  └──signup.ejs       # SignUp Page
+        |    └──error.ejs           # Custom Error Msg
+        ├──app.js                   # Main JS File for Project
+        ├──middleware.js            # All Middlewares in Single File
+        ├──notes.txt                # Notes and Summary for Project
+        ├──package-lock.json
+        ├──package.json
+        └──schema.js                # Schema Validation File
+
+3.1 PROJECT PHASE-3
+PART-A
+    install
+    npm i multer: is a node.js middleware for handling multipart/form-data.
+    npm i dotenv
+    npm i cloudinary@^1.21.0 (@^1.21.0 becoz od version conflict)
+    npm i multer-storage-cloudinary
+
+
+    Summary
+        1. Implementing MVC Model in our project.
+        2. Using Router.route (refer docs for further study)
+        3. Restyling Reviews (stars)
+        4. Manipulating Form to Upload Image
+        5. Cloud Setup (cloudinary)
+        6. Save Link in DB, Display Image
+
+    File Structure
+    MajorProject/                   # Main project Folder
+        ├──controllers
+        |    ├──listing.js          # All Routes of Listing
+        |    ├──review.js           # All Routes of Review
+        |    └──user.js             # All Routes of User
+        ├──init/
+        |    ├──data.js             # Sample data 
+        |    └──index.js            # Database Connection 
+        ├──models
+        |    ├──listing.js          # Schema Model for Listing Collection
+        |    ├──review.js           # Schema Model for Review Collection
+        |    └──user.js             # Schema Model for User Collection
+        ├──node_modules
+        ├──public  
+        |    ├──css 
+        |    |  ├──rating.js        # CSS File for Ratings     
+        |    |  └──style.css        # CSS File for all Routes
+        |    └──js         
+        |       └──script.js        # JS File from for Custom Form Validation(required field text)
+        ├──routes
+        |    ├──listing.js          # All the Routes of Listing
+        |    ├──review.js           # All the Routes of Review
+        |    └──user.js             # All the Routes of SignUp/Login
+        ├──utils
+        |    ├──ExpressError.js     # Handles Express Errors
+        |    └──wrapAsync.js        # Function that Handles Error in app.js 
+        ├──views
+        |    ├──includes
+        |    |  ├──flash.ejs        # Flash messages for all Pages
+        |    |  ├──footer.ejs       # Footer for all Pages
+        |    |  └──navbar.ejs       # Navbar for all Pages
+        |    ├──layouts
+        |    |  └──biolerplate.ejs  # Primary HTML File that Includes Files Accordingly
+        |    ├──listings
+        |    |  ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
+        |    |  ├──index.ejs        # All Listing               "/listings"
+        |    |  ├──new.ejs          # Create New Listing        "/listings/new"
+        |    |  └──show.ejs         # Display Single Listing    "/listings/:id"
+        |    ├──users
+        |    |  ├──login.ejs        # Login Page
+        |    |  └──signup.ejs       # SignUp Page
+        |    └──error.ejs           # Custom Error Msg
+        ├──.env                     # Environment Variables/Credentials File
+        ├──app.js                   # Main JS File for Project
+        ├──cloudConfig.js           # Cloudinary JS File for Image File upload Option
+        ├──middleware.js            # All Middlewares in Single File
+        ├──notes.txt                # Notes and Summary for Project
+        ├──package-lock.json
+        ├──package.json
+        └──schema.js                # Schema Validation File
+
+3.2 PROJECT PHASE-3
+PART-B
+    install
+        npm install @mapbox/mapbox-sdk
+
+    Summary
+        1. Image Upload on Edit Form
+        2. Image Preview on Edit Form
+        3. Getting Started With Maps (Using Mapbox API)
+        4. Geocoding: process of converting a readable address into geographic coordinates, typically latitude and longitude.
+        5. Stroring Location in DB into geoJSON Format
+        6. Adding Map Marker and Map Pop-up
+        7. Refer to docs for H.W features(Add an icon to the map) (https://docs.mapbox.com/mapbox-gl-js/api/markers/#marker)
+
+    File Structure
+    MajorProject/                   # Main project Folder
+        ├──controllers
+        |    ├──listing.js          # All Routes of Listing
+        |    ├──review.js           # All Routes of Review
+        |    └──user.js             # All Routes of User
+        ├──init/
+        |    ├──data.js             # Sample data 
+        |    └──index.js            # Database Connection 
+        ├──models
+        |    ├──listing.js          # Schema Model for Listing Collection
+        |    ├──review.js           # Schema Model for Review Collection
+        |    └──user.js             # Schema Model for User Collection
+        ├──node_modules
+        ├──public  
+        |    ├──css 
+        |    |  ├──rating.js        # CSS File for Ratings     
+        |    |  └──style.css        # CSS File for all Routes
+        |    └──js
+        |       ├──map.js           # JS File for Map     
+        |       └──script.js        # JS File from for Custom Form Validation(required field text)
+        ├──routes
+        |    ├──listing.js          # All the Routes of Listing
+        |    ├──review.js           # All the Routes of Review
+        |    └──user.js             # All the Routes of SignUp/Login
+        ├──utils
+        |    ├──ExpressError.js     # Handles Express Errors
+        |    └──wrapAsync.js        # Function that Handles Error in app.js 
+        ├──views
+        |    ├──includes
+        |    |  ├──flash.ejs        # Flash messages for all Pages
+        |    |  ├──footer.ejs       # Footer for all Pages
+        |    |  └──navbar.ejs       # Navbar for all Pages
+        |    ├──layouts
+        |    |  └──biolerplate.ejs  # Primary HTML File that Includes Files Accordingly
+        |    ├──listings
+        |    |  ├──edit.ejs         # Edit Existing Listing     "/listings/:id/edit"
+        |    |  ├──index.ejs        # All Listing               "/listings"
+        |    |  ├──new.ejs          # Create New Listing        "/listings/new"
+        |    |  └──show.ejs         # Display Single Listing    "/listings/:id"
+        |    ├──users
+        |    |  ├──login.ejs        # Login Page
+        |    |  └──signup.ejs       # SignUp Page
+        |    └──error.ejs           # Custom Error Msg
+        ├──.env                     # Environment Variables/Credentials File
+        ├──app.js                   # Main JS File for Project
+        ├──cloudConfig.js           # Cloudinary JS File for Image File upload Option
+        ├──middleware.js            # All Middlewares in Single File
+        ├──notes.txt                # Notes and Summary for Project
+        ├──package-lock.json
+        ├──package.json
+        └──schema.js                # Schema Validation File
+
+3.3 PROJECT PHASE-3
+PART-C
+
+    Home Work
+    COMPLETED 1. Add Category drop-down in Edit & Create Form for Filters and Display it.
+    COMPLETED 2. Add Backend to Filters (Project P-3C 3rd Vedio)
+    COMPLETED 3. Add Backend for Search field
+
+    Summary
+        1. Fixing Home Page
+        2. Adding UI For Filters & Search
+        3. Adding UI & Functionality for Tax Switch
+
+    File Structure
+        MajorProject/                   # Main project Folder
+        **SAME AS BEFORE**
+
+3.4 PROJECT PHASE-3
+PART-D
+
+    install
+        npm i connect-mongo 
+
+    Summary
+        1. Using Mongo Atlas: Cloud Database Service
+        2. Mongo Session Store (touchAfter: login after everytime server starts solve)
+        3. Deployment with Render (adding node version in engines in package.json before Deployment)
+        4. Push Code to GitHub
+        5. Connect Render With GitHub
+        6. Create New Service

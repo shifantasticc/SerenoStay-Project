@@ -36,6 +36,22 @@ const listingSchema = new Schema({
       required: true,
     },
   },
+  category: {
+    type: String,
+    enum: [
+      'Trending',
+      'Rooms',
+      'Cities',
+      'Mountains',
+      'Castles',
+      'Pools',
+      'Camping',
+      'Farms',
+      'Arctic',
+      'Beach',
+    ],
+    required: true, // Optional: if you want to force category selection
+  },
 });
 
 // Middlesware to delete All the Reviews when deleting a listing

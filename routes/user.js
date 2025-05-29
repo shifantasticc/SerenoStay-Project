@@ -28,4 +28,10 @@ router
 // Logout Route
 router.get('/logout', userController.logout);
 
+//  Search Route
+router.get('/search', userController.searchListings);
+
+// Filter Route
+router.get('/filter', userController.filterListings);
+
 module.exports = router;

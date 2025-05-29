@@ -1,4 +1,5 @@
 const User = require('../models/user.js');
+const Listing = require('../models/listing.js');
 
 module.exports.renderSignupForm = (req, res) => {
   res.render('users/signup.ejs');
@@ -41,4 +42,40 @@ module.exports.logout = (req, res) => {
     req.flash('success', 'you are logged out!');
     res.redirect('/listings');
   });
+};
+
+// Search Listings
+module.exports.searchListings = async (req, res) => {
+  try {
+    const { search } = req.query;
+    const query = {};
+    if (search) {
+      query.$or = [
+        { title: { $regex: search, $options: 'i' } },
+        { location: { $regex: search, $options: 'i' } },
+        { country: { $regex: search, $options: 'i' } },
+        { category: { $regex: search, $options: 'i' } },
+      ];
+    }
+    const listings = await Listing.find(query);
+    res.render('listings/index.ejs', { allListings: listings }); // or send JSON if using frontend JS
+  } catch (error) {
+    console.error('Search failed:', error);
+    res.status(500).send('Search failed: ' + error.message);
+  }
+};
+
+// Filter Listings
+module.exports.filterListings = async (req, res) => {
+  const category = req.query.category;
+
+  try {
+    const listings = await Listing.find({
+      category: { $regex: category, $options: 'i' }, // case-insensitive
+    });
+
+    res.render('listings/index.ejs', { allListings: listings }); // pass to EJS
+  } catch (e) {
+    res.status(500).send('Server error while filtering listings.');
+  }
 };
