@@ -50,7 +50,7 @@ const listingSchema = new Schema({
       'Arctic',
       'Beach',
     ],
-    required: true, // Optional: if you want to force category selection
+    required: true,
   },
 });
 
