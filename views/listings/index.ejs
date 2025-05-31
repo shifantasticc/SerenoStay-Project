@@ -13,7 +13,7 @@
   }
 
   .filter-link {
-     color: inherit;
+    color: #fe424d;
     text-decoration: none;
   }
 
@@ -31,6 +31,18 @@
 
   .filter-link p {
     font-size: 0.8rem;
+    color: #fe424d;
+  }
+
+  @media (max-width: 1000px) {
+    .filter-link p {
+      font-size: 0.5rem;
+    }
+
+    .filter-link {
+      text-align: center;
+      margin-right: 1.1rem;
+    }
   }
 
   .tax-info {
@@ -38,15 +50,20 @@
   }
 
   .tax-toggle {
-    border: 1px solid black;
+    border: 1px solid #fe424d;
     border-radius: 1rem;
-    height: 3.25rem;
-    padding: 1rem;
+    height: 3rem;
+    padding: 0rem 1rem 0rem 1rem;
     margin-left: 0.5rem;
     margin-top: 0.5rem;
     display: flex;
     align-items: center;
   }
+
+  .tax-label {
+    font-size: 1.2rem;
+  }
+
 </style>
 <div id="filters">
   <form action="/filter" method="GET" id="filter">
@@ -104,8 +121,8 @@
         role="switch"
         id="switchCheckDefault"
       />
-      <label class="form-check-label" for="switchCheckDefault"
-        >Display total after taxes
+      <label class="form-check-label tax-label" for="switchCheckDefault"
+        >Total after taxes
       </label>
     </div>
   </div>
@@ -147,8 +164,15 @@
     }
   });
 
-  // let filterBtn = document.getElementById('filter-icon');
-  // filterBtn.addEventListener('click', () => {
-  //   console.log('button clicked');
-  // });
+  function updateLabelText() {
+    const label = document.querySelector('.tax-label');
+    if (window.innerWidth < 900) {
+      label.textContent = 'Tax';
+    } else {
+      label.textContent = 'Total  after  taxes';
+    }
+  }
+
+  window.addEventListener('resize', updateLabelText);
+  window.addEventListener('DOMContentLoaded', updateLabelText);
 </script>

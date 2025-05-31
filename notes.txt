@@ -399,10 +399,10 @@ PART-E
 3.1 PROJECT PHASE-3
 PART-A
     install
-    npm i multer: is a node.js middleware for handling multipart/form-data.
-    npm i dotenv
-    npm i cloudinary@^1.21.0 (@^1.21.0 becoz od version conflict)
-    npm i multer-storage-cloudinary
+        npm i multer: is a node.js middleware for handling multipart/form-data.
+        npm i dotenv
+        npm i cloudinary@^1.21.0 (@^1.21.0 becoz of =version conflict)
+        npm i multer-storage-cloudinary
 
 
     Summary
