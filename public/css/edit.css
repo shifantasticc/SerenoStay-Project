@@ -1,0 +1,54 @@
+/* Edit page */
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+  width: 5rem;
+}
+
+.edit-image {
+  width: 200px;
+  height: 20vh;
+}
+
+.edit-listing {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: top;
+  flex-direction: column;
+  width: auto;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.edit-title,
+.edit-description,
+.edit-category,
+.edit-img,
+.edit-price,
+.edit-country,
+.edit-location {
+  margin-bottom: 1rem !important;
+}
+
+@media (max-width: 770px) {
+  .edit-listing {
+    margin: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .edit-image {
+    width: 15rem;
+    height: 20vh;
+  }
+
+  .edit-title,
+  .edit-description,
+  .edit-category,
+  .edit-img,
+  .edit-price,
+  .edit-country,
+  .edit-location {
+    margin-bottom: 0.8rem !important;
+  }
+}

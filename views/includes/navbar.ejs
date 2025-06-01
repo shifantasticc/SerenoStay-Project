@@ -30,9 +30,15 @@
     margin-right: 0.5rem;
   }
 
+  @media (min-width: 768px) and (max-width: 1100px) {
+    .search-input {
+      width: 20rem;
+    }
+  }
+
   @media (max-width: 768px) {
     .search-input {
-      width: 12rem;
+      width: 15rem;
     }
 
     .search-label {
@@ -52,9 +58,21 @@
     }
   }
 
-  @media (min-width: 768px) and (max-width: 1100px) {
+  @media (max-width: 510px) {
+    .explore-link {
+      display: none;
+    }
     .search-input {
-      width: 20rem;
+      width: 10rem;
+    }
+    .search-btn {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .search-input {
+      width: 7rem;
     }
   }
 </style>
@@ -67,7 +85,11 @@
       <a class="navbar-brand me-2" href="/listings">
         <i class="fa-solid fa-meteor"></i>
       </a>
-      <a class="nav-link explore-link" href="/listings">Explore</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav text-end">
+          <a class="nav-link explore-link" href="/listings">Explore</a>
+        </div>
+      </div>
     </div>
 
     <!-- Search Bar -->

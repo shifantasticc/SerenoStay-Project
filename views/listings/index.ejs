@@ -1,117 +1,58 @@
 <% layout("/layouts/boilerplate") %>
 <style>
-  #filters {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .filter {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .filter-link {
-    color: #fe424d;
-    text-decoration: none;
-  }
-
-  .filter-link {
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    opacity: 0.7;
-  }
-
-  .filter-link:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-
-  .filter-link p {
-    font-size: 0.8rem;
-    color: #fe424d;
-  }
-
-  @media (max-width: 1000px) {
-    .filter-link p {
-      font-size: 0.5rem;
-    }
-
-    .filter-link {
-      text-align: center;
-      margin-right: 1.1rem;
-    }
-  }
-
-  .tax-info {
-    display: none;
-  }
-
-  .tax-toggle {
-    border: 1px solid #fe424d;
-    border-radius: 1rem;
-    height: 3rem;
-    padding: 0rem 1rem 0rem 1rem;
-    margin-left: 0.5rem;
-    margin-top: 0.5rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .tax-label {
-    font-size: 1.2rem;
-  }
-
+ 
 </style>
 <div id="filters">
-  <form action="/filter" method="GET" id="filter">
-    <div class="filter">
-      <a href="/filter?category=Trending" class="filter-link">
-        <div><i class="fa-solid fa-fire" id="filter-icon"></i></div>
-        <p>Trending</p>
-      </a>
-      <a href="/filter?category=Rooms" class="filter-link">
-        <div><i class="fa-solid fa-bed" id="filter-icon"></i></div>
-        <p>Rooms</p>
-      </a>
-      <a href="/filter?category=Cities" class="filter-link">
-        <div><i class="fa-solid fa-mountain-city" id="filter-icon"></i></div>
-        <p>Cities</p>
-      </a>
-      <a href="/filter?category=Mountains" class="filter-link">
-        <div><i class="fa-solid fa-mountain" id="filter-icon"></i></div>
-        <p>Mountains</p>
-      </a>
-      <a href="/filter?category=Castles" class="filter-link">
-        <div><i class="fa-solid fa-chess-rook" id="filter-icon"></i></div>
-        <p>Castles</p>
-      </a>
-      <a href="/filter?category=Pools" class="filter-link">
-        <div><i class="fa-solid fa-person-swimming" id="filter-icon"></i></div>
-        <p>Pools</p>
-      </a>
-      <a href="/filter?category=Camping" class="filter-link">
-        <div><i class="fa-solid fa-campground" id="filter-icon"></i></div>
-        <p>Camping</p>
-      </a>
-      <a href="/filter?category=Farms" class="filter-link">
-        <div><i class="fa-solid fa-tractor" id="filter-icon"></i></div>
-        <p>Farms</p>
-      </a>
-      <a href="/filter?category=Arctic" class="filter-link">
-        <div>
-          <i class="fa-solid fa-person-snowboarding" id="filter-icon"></i>
-        </div>
-        <p>Arctic</p>
-      </a>
-      <a href="/filter?category=Beach" class="filter-link">
-        <div><i class="fa-solid fa-umbrella-beach" id="filter-icon"></i></div>
-        <p>Beach</p>
-      </a>
-    </div>
-  </form>
+  <div class="filter-icons">
+    <form action="/filter" method="GET" id="filter">
+      <div class="filter">
+        <a href="/filter?category=Trending" class="filter-link">
+          <div><i class="fa-solid fa-fire" id="filter-icon"></i></div>
+          <p>Trending</p>
+        </a>
+        <a href="/filter?category=Rooms" class="filter-link">
+          <div><i class="fa-solid fa-bed" id="filter-icon"></i></div>
+          <p>Rooms</p>
+        </a>
+        <a href="/filter?category=Cities" class="filter-link">
+          <div><i class="fa-solid fa-mountain-city" id="filter-icon"></i></div>
+          <p>Cities</p>
+        </a>
+        <a href="/filter?category=Mountains" class="filter-link">
+          <div><i class="fa-solid fa-mountain" id="filter-icon"></i></div>
+          <p>Mountains</p>
+        </a>
+        <a href="/filter?category=Castles" class="filter-link">
+          <div><i class="fa-solid fa-chess-rook" id="filter-icon"></i></div>
+          <p>Castles</p>
+        </a>
+        <a href="/filter?category=Pools" class="filter-link">
+          <div>
+            <i class="fa-solid fa-person-swimming" id="filter-icon"></i>
+          </div>
+          <p>Pools</p>
+        </a>
+        <a href="/filter?category=Camping" class="filter-link">
+          <div><i class="fa-solid fa-campground" id="filter-icon"></i></div>
+          <p>Camping</p>
+        </a>
+        <a href="/filter?category=Farms" class="filter-link">
+          <div><i class="fa-solid fa-tractor" id="filter-icon"></i></div>
+          <p>Farms</p>
+        </a>
+        <a href="/filter?category=Arctic" class="filter-link">
+          <div>
+            <i class="fa-solid fa-person-snowboarding" id="filter-icon"></i>
+          </div>
+          <p>Arctic</p>
+        </a>
+        <a href="/filter?category=Beach" class="filter-link">
+          <div><i class="fa-solid fa-umbrella-beach" id="filter-icon"></i></div>
+          <p>Beach</p>
+        </a>
+      </div>
+    </form>
+  </div>
 
   <div class="tax-toggle">
     <div class="form-check-reverse form-switch">
@@ -166,7 +107,7 @@
 
   function updateLabelText() {
     const label = document.querySelector('.tax-label');
-    if (window.innerWidth < 900) {
+    if (window.innerWidth < 992) {
       label.textContent = 'Tax';
     } else {
       label.textContent = 'Total  after  taxes';

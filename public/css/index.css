@@ -1,0 +1,115 @@
+/* Filter */
+#filters {
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+}
+
+.filter-icons {
+  overflow: scroll;
+  width: 100%;
+}
+
+.filter-icons .filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 1000px;
+}
+
+.filter-icons .filter a {
+  width: 50px;
+  float: left;
+}
+
+.filter-icons::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-link {
+  color: #fe424d;
+  text-decoration: none;
+}
+
+.filter-link {
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  opacity: 0.7;
+}
+
+.filter-link:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter-link p {
+  font-size: 0.8rem;
+  color: #fe424d;
+}
+
+/* Tax Toggle Button */
+.tax-info {
+  display: none;
+}
+
+.tax-toggle {
+  border: 1px solid #fe424d;
+  border-radius: 1rem;
+  height: 3rem;
+  width: 15rem;
+  padding: 0rem 1rem 0rem 1rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.tax-label {
+  font-size: 1rem;
+}
+
+@media (max-width: 991px) {
+  .tax-toggle {
+    width: 7rem;
+    height: 3rem;
+  }
+
+  .filter-link {
+    margin-right: 1.1rem;
+  }
+}
+
+/* Cards */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-text p {
+  font-weight: 400 !important;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: #fff;
+}

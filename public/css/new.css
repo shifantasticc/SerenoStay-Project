@@ -1,0 +1,43 @@
+/* New Page */
+.add-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+.create-listing {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: top;
+  flex-direction: column;
+  width: auto;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.new-title,
+.new-description,
+.new-category,
+.new-img,
+.new-price,
+.new-country,
+.new-location {
+  margin-bottom: 1rem !important;
+}
+
+@media (max-width: 770px) {
+  .create-listing {
+    margin: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .new-title,
+.new-description,
+.new-category,
+.new-img,
+.new-price,
+.new-country,
+.new-location {
+    margin-bottom: 0.8rem !important;
+  }
+}

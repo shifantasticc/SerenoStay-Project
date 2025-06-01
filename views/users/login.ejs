@@ -1,10 +1,48 @@
 <% layout("/layouts/boilerplate") %>
+<style>
+  .login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    width: auto;
+    font-size: 1rem;
+    margin-top: 2rem !important;
+  }
 
-<div class="row mt-3">
-  <h1 class="col-6 offset-3">Login</h1>
-  <div class="col-6 offset-3">
+  .login-form div {
+    margin-bottom: 1.5rem !important;
+    width: 30rem;
+  }
+
+  @media (max-width: 990px) {
+    .login {
+      width: auto;
+      margin: 1rem;
+      font-size: 1rem;
+    }
+
+    .login-title {
+      margin-top: 2rem !important;
+    }
+
+    .login-id,
+    .login-pw {
+      margin-bottom: 2rem;
+    }
+
+    .login-form div {
+      width: 20rem;
+    }
+  }
+</style>
+
+<div class="login mt-3">
+  <h1 class="login-title">Login</h1>
+  <div class="login-form">
     <form action="/login" method="POST" class="needs-validation" novalidate>
-      <div class="mb-3">
+      <div class="login-id">
         <label for="username" class="form-label">Username</label>
         <input
           type="text"
@@ -14,8 +52,8 @@
           required
         />
       </div>
-      
-      <div class="mb-3">
+
+      <div class="login-pw">
         <label for="password" class="form-label">Password</label>
         <input
           type="password"
@@ -25,7 +63,8 @@
           required
         />
       </div>
-      <button class="btn btn-success mb-3">Login</button>
+
+      <button class="btn btn-success mt-3 mb-5">Login</button>
     </form>
   </div>
 </div>

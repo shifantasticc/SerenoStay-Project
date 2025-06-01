@@ -1,0 +1,73 @@
+/* Show Page */
+.btns {
+  display: flex;
+}
+
+.show-img {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  height: 40vh !important;
+}
+
+.show-card {
+  width: 45%;
+}
+
+.show-listing {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .show-listing {
+    width: auto;
+  }
+
+  .show-img {
+    height: 30vh !important;
+  }
+}
+
+.show-card,
+.listing-review,
+.btns {
+  width: 100%;
+  max-width: 80rem;
+}
+
+.all-review .card {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 20rem;
+}
+
+.row-review {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.review {
+  width: 15rem;
+  padding: 10px;
+}
+
+/* Map-Card */
+#map {
+  height: 50vh;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.show-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

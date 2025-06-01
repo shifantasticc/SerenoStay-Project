@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate") %>
 
-<div class="row mt-3">
-  <div class="col-8 offset-2">
+<div class="create-listing">
+  <div class="new-listing">
     <h3>Create a New Listing</h3>
     <form
       action="/listings"
@@ -10,7 +10,7 @@
       class="needs-validation"
       enctype="multipart/form-data"
     >
-      <div class="mb-3">
+      <div class="new-title">
         <label for="title" class="form-label">Title</label>
         <input
           type="text"
@@ -22,10 +22,11 @@
         <div class="valid-feedback">Title looks good!</div>
       </div>
 
-      <div class="mb-3">
+      <div class="new-description">
         <label for="description" class="form-label">Description</label>
         <textarea
           name="listing[description]"
+          placeholder="Add description"
           class="form-control"
           required
         ></textarea>
@@ -33,7 +34,7 @@
       </div>
 
       <div class="row">
-        <div class="mb-3 col-md-4">
+        <div class="new-category col-md-4">
           <label for="category" class="form-label">Choose a category:</label>
           <select name="listing[category]" id="category" class="form-control">
             <option value="Trending">Trending</option>
@@ -48,14 +49,14 @@
             <option value="Beach">Beach</option>
           </select>
         </div>
-        <div class="mb-3 col-md-8">
+        <div class="new-img col-md-8">
           <label for="image" class="form-label">Upload Image</label>
           <input name="listing[image]" type="file" class="form-control" />
         </div>
       </div>
 
       <div class="row">
-        <div class="mb-3 col-md-4">
+        <div class="new-price col-md-4">
           <label for="price" class="form-label">Price</label>
           <input
             name="listing[price]"
@@ -66,7 +67,7 @@
           <div class="invalid-feedback">Price should be valid</div>
         </div>
 
-        <div class="mb-3 col-md-8">
+        <div class="new-country col-md-8">
           <label for="country" class="form-label">Country</label>
           <input
             type="text"
@@ -79,7 +80,7 @@
         </div>
       </div>
 
-      <div class="mb-3">
+      <div class="new-location">
         <label for="location" class="form-label">Location</label>
         <input
           type="text"
@@ -91,7 +92,7 @@
         <div class="invalid-feedback">Location should be valid</div>
       </div>
 
-      <button class="btn btn-dark add-btn mt-3 mb-3">Add</button>
+      <button class="btn btn-dark add-btn mb-5">Add</button>
     </form>
   </div>
 </div>
